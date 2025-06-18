@@ -1,12 +1,29 @@
 import './App.css';
 import { useState, useEffect } from "react";
-import li2 from "./assets/books/l2.png";
+
+// Importa tus imágenes (pon los paths correctos)
+import adventureImg from "./assets/books/Adventure.png";
+import horrorImg from "./assets/books/Horror.png";
+import romanceImg from "./assets/books/Romance.png";
+import historyImg from "./assets/books/History.png";
+import scifiImg from "./assets/books/Scifi.png";
+import mysteryImg from "./assets/books/Mystery.png";
 
 export default function App() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [genre, setGenre] = useState("");
   const [books, setBooks] = useState([]);
+
+  // Mapeo género -> imagen
+  const genreImages = {
+    "Aventura": adventureImg,
+    "Terror": horrorImg,
+    "Romance": romanceImg,
+    "Historia": historyImg,
+    "Ciencia ficcion": scifiImg,
+    "Misterio": mysteryImg,
+  };
 
   const fetchBooks = async () => {
     try {
@@ -44,14 +61,19 @@ export default function App() {
       </div>
 
       <div className="book-grid">
-        {books.map((book) => (
-          <div key={book.id} className="book-card">
-            <p className="pixel-font">{book.title}</p>
-            <img src={li2} alt="li2" className="book" />
-            <p>{book.author}</p>
-            <p><em>{book.genero}</em></p>
-          </div>
-        ))}
+        {books.map((book) => {
+          // Escoge la imagen según el género o la imagen por defecto
+          const imgSrc = genreImages[book.genero];
+
+          return (
+            <div key={book.id} className="book-card">
+              <p className="pixel-font">{book.title}</p>
+              <img src={imgSrc} alt={book.genero} className="book" />
+              <p className='bookAuthor'>{book.author}</p>
+              <p className='bookGender'>{book.genero}</p>
+            </div>
+          );
+        })}
       </div>
 
       <div className="content">
@@ -60,12 +82,14 @@ export default function App() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Título"
+            className="inputs"
             required
           />
           <input
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
             placeholder="Autor"
+            className="inputs"
             required
           />
           <select

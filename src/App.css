@@ -13,7 +13,7 @@ html, body {
 
 /* Sección de fondo con imagen a pantalla completa */
 .hero {
-  background-image: url('./assets/l1.png');
+  background-image: url('./assets/mainbg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -69,8 +69,10 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  border-radius: 0;
+  padding: 1rem 0.5rem; /* alto: 1rem, ancho: 0.5rem */
 }
-
 /* Nueva rejilla de libros */
 .book-grid {
   display: grid;
@@ -117,4 +119,41 @@ button {
   height: 160px;
   object-fit: contain;
   margin: 0.5rem 0;
+}
+
+.inputs {
+  border: 5px solid black;
+  border-radius: 0;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.book-card .bookAuthor {
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+}
+
+.book-card .bookGender {
+   font-family: 'Share Tech Mono', monospace;
+  font-size: 1.5rem;
+}
+
+select {
+  border: 5px solid black;
+  border-radius: 0;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: 0.5rem auto; /* para que tenga el mismo margin que inputs y botón */
+  background-color: white; /* para que sea visible y limpio */
+  appearance: none; /* elimina la flecha por defecto en algunos navegadores */
+  cursor: pointer;
+  color: black;
 }
