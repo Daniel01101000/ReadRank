@@ -1,42 +1,120 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Root necesita altura completa */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Sección de fondo con imagen a pantalla completa */
+.hero {
+  background-image: url('./assets/l1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+/* Título centrado, blanco, pixelado */
+.title {
+  color: white;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* Fuente pixelada */
+.pixel-font {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  user-select: none;
+}
+
+/* Contenido del formulario */
+.content {
   padding: 2rem;
+  max-width: 600px;
+  margin: auto;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Inputs y botón */
+input, button {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+/* Nueva rejilla de libros */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 1rem;
+  justify-content: center;
 }
 
-.read-the-docs {
-  color: #888;
+.book-card {
+  background-color: #f5f5f5;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+
+  height: 270px;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+.book-card p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.book-card .pixel-font {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.book {
+  width: 220px;
+  height: 160px;
+  object-fit: contain;
+  margin: 0.5rem 0;
 }

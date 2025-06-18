@@ -11,18 +11,19 @@ const pool = mysql.createPool({
   host: "localhost",
   database: "BooksRank",
   password: "SQL1122",
-  port: 3306, // puerto por defecto de MySQL
+  port: 3306,
 });
 
 app.post("/books", async (req, res) => {
-  const { title, author } = req.body;
+  const { title, author, genero } = req.body;
   try {
     const [result] = await pool.query(
-      "INSERT INTO books (title, author) VALUES (?, ?)",
-      [title, author]
+      "INSERT INTO books (title, author, genero) VALUES (?, ?, ?)",
+      [title, author, genero]
     );
-    res.status(201).json({ id: result.insertId, title, author });
+    res.status(201).json({ id: result.insertId, title, author, genero });
   } catch (err) {
+    console.error("Error en POST /books:", err); // Aquí verás el error real
     res.status(500).json({ error: err.message });
   }
 });
@@ -32,7 +33,7 @@ app.get("/books", async (req, res) => {
     const [rows] = await pool.query("SELECT * FROM books");
     res.json(rows);
   } catch (err) {
-    console.error("Error en GET /books:", err); // Esto es importante
+    console.error("Error en GET /books:", err);
     res.status(500).json({ error: err.message });
   }
 });
