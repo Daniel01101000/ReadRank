@@ -1,7 +1,14 @@
 import './App.css';
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import Home from './components/Home.jsx';
+import Library from './components/Library.jsx';
+import Favorites from './components/Favorites.jsx';
+import AddBook from './components/AddBook.jsx';
+import About from './components/About.jsx';
+import mainbg from "./assets/mainbg.png";
 
-// Importa tus imágenes (pon los paths correctos)
 import adventureImg from "./assets/books/Adventure.png";
 import horrorImg from "./assets/books/Horror.png";
 import romanceImg from "./assets/books/Romance.png";
@@ -15,7 +22,6 @@ export default function App() {
   const [genre, setGenre] = useState("");
   const [books, setBooks] = useState([]);
 
-  // Mapeo género -> imagen
   const genreImages = {
     "Aventura": adventureImg,
     "Terror": horrorImg,
@@ -55,59 +61,70 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <div className="hero">
-        <h1 className="title pixel-font">BookRank</h1>
-      </div>
-
-      <div className="book-grid">
-        {books.map((book) => {
-          // Escoge la imagen según el género o la imagen por defecto
-          const imgSrc = genreImages[book.genero];
-
-          return (
-            <div key={book.id} className="book-card">
-              <p className="pixel-font">{book.title}</p>
-              <img src={imgSrc} alt={book.genero} className="book" />
-              <p className='bookAuthor'>{book.author}</p>
-              <p className='bookGender'>{book.genero}</p>
+    <Router basename="/ReadRank">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/library" element={
+          <>
+            <div className="hero">
+              <img src={mainbg} alt="Fondo principal" className="hero-image" />
+              <h1 className="title pixel-font">BookRank</h1>
             </div>
-          );
-        })}
-      </div>
 
-      <div className="content">
-        <form onSubmit={handleSubmit}>
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Título"
-            className="inputs"
-            required
-          />
-          <input
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Autor"
-            className="inputs"
-            required
-          />
-          <select
-            value={genre}
-            onChange={(e) => setGenre(e.target.value)}
-            required
-          >
-            <option value="">Selecciona un género</option>
-            <option value="Aventura">Aventura</option>
-            <option value="Terror">Terror</option>
-            <option value="Romance">Romance</option>
-            <option value="Historia">Historia</option>
-            <option value="Ciencia ficcion">Ciencia ficción</option>
-            <option value="Misterio">Misterio</option>
-          </select>
-          <button>Agregar</button>
-        </form>
-      </div>
-    </>
+            <div className="book-grid">
+              {books.map((book) => {
+                const imgSrc = genreImages[book.genero];
+                return (
+                  <div key={book.id} className="book-card">
+                    <p className="pixel-font">{book.title}</p>
+                    <img src={imgSrc} alt={book.genero} className="book" />
+                    <p className='bookAuthor'>{book.author}</p>
+                    <p className='bookGender'>{book.genero}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+         } /> 
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/add" element={
+          <div className="content">
+            <form onSubmit={handleSubmit}>
+              <input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Título"
+                className="inputs"
+                required
+              />
+              <input
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                placeholder="Autor"
+                className="inputs"
+                required
+              />
+              <select
+                value={genre}
+                onChange={(e) => setGenre(e.target.value)}
+                required
+                className="inputs"
+              >
+                <option value="" disabled hidden>Selecciona un género</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Terror">Terror</option>
+                <option value="Romance">Romance</option>
+                <option value="Historia">Historia</option>
+                <option value="Ciencia ficcion">Ciencia ficción</option>
+                <option value="Misterio">Misterio</option>
+              </select>
+              <button>Agregar</button>
+            </form>
+          </div>
+        } />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
