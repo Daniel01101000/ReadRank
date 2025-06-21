@@ -72,3 +72,50 @@ html, body {
   opacity: 0.9;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1690px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-images {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem; /* aumentado para mayor separación */
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .desk,
+  .dev {
+    position: static;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .desk {
+    width: 18rem;
+  }
+
+  .dev {
+    width: 9rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .desk {
+    display: none;
+  }
+
+  .about-images {
+    justify-content: center;
+  }
+
+  .dev {
+    display: block;
+    margin: 0 auto;
+  }
+}

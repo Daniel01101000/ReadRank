@@ -27,14 +27,14 @@ export default function AddBook({
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Título"
+          placeholder="Title"
           className="inputs"
           required
         />
         <input
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Autor"
+          placeholder="Author"
           className="inputs"
           required
         />
@@ -44,15 +44,15 @@ export default function AddBook({
           required
           className="inputs"
         >
-          <option value="" disabled hidden>Selecciona un género</option>
-          <option value="Aventura">Aventura</option>
-          <option value="Terror">Terror</option>
-          <option value="Romance">Romance</option>
-          <option value="Historia">Historia</option>
-          <option value="Ciencia ficcion">Ciencia ficción</option>
-          <option value="Misterio">Misterio</option>
-        </select>
-        <button>Agregar</button>
+           <option value="" disabled hidden>Select a genre</option>
+  <option value="Adventure">Adventure</option>
+  <option value="Horror">Horror</option>
+  <option value="Romance">Romance</option>
+  <option value="History">History</option>
+  <option value="Scifi">Science Fiction</option>
+  <option value="Mystery">Mystery</option>
+</select>
+<button>Add</button>
       </form>
     </main>
   );

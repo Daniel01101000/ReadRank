@@ -1,0 +1,42 @@
+
+.page-content-favorites-page {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+}
+
+.favorites-page {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: calc(100vh - 100px);
+}
+
+/* Centrado de mensaje cuando no hay libros */
+.empty-favorites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); /* Ajusta según el alto de tu header */
+  width: 100vw;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.empty-favorites h2 {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  font-size: 1rem;
+  color: #222;
+  margin: 0; 
+}
+
+.inline-star {
+  height: 2.7rem;
+  vertical-align: middle;
+}
+
+.inline-book {
+  height: 2.7rem;
+  vertical-align: middle;
+}

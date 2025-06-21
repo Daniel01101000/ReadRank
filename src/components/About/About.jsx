@@ -8,14 +8,6 @@ export default function About() {
     <>
       <div className="about-page">
         <div className="about-content">
-          <img src={desk} alt="desk" className="desk" />
-          <a
-        href="https://github.com/Daniel01101000"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-          <img src={Dev} alt="dev" className="dev" />
-          </a>
           <div className="about-text">
             <p>
               I created this app to practice the knowledge I learned through Codecademy and to better understand how to work with a database.
@@ -31,6 +23,18 @@ export default function About() {
               <li>Git</li>
               <li>GitHub Pages</li>
             </ul>
+          </div>
+
+          {/* Contenedor de imágenes para la media query */}
+          <div className="about-images">
+            <a
+              href="https://github.com/Daniel01101000"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Dev} alt="dev" className="dev" />
+            </a>
+            <img src={desk} alt="desk" className="desk" />
           </div>
         </div>
       </div>

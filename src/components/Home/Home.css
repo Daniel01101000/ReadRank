@@ -1,0 +1,55 @@
+
+.hero-image {
+  width: 100vw;  /* Ocupa todo el ancho */
+  height: auto;  /* Ajusta la altura proporcionalmente */
+  display: block; /* Evita espacio debajo de la imagen */
+  max-height: 100vh; /* Para que no crezca más que la ventana */
+  object-fit: contain;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  z-index: 10;
+  pointer-events: none;     /* Para que no interfiera con clicks */
+  user-select: none;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+}
+
+.about-page .hero {
+  padding-top: 6rem;
+}
+
+.hero {
+  width: 100vw;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 70px; /* espacio para que no quede debajo del header */
+}
+
+@media screen and (max-width: 780px) {
+  .hero {
+  width: 100vw;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 100px;
+ }
+
+ .hero-image {
+  width: auto;       /* deja que la anchura se ajuste automáticamente */
+  height: 90vw;     /* altura relativa al ancho del viewport */
+  max-width: none;   /* elimina límites */
+  object-fit: contain; /* para que la imagen no se distorsione */
+}
+}

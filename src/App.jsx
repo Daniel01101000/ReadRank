@@ -22,12 +22,12 @@ export default function App() {
   const [books, setBooks] = useState([]);
 
   const genreImages = {
-    "Aventura": adventureImg,
-    "Terror": horrorImg,
+    "Adventure": adventureImg,
+    "Horror": horrorImg,
     "Romance": romanceImg,
-    "Historia": historyImg,
-    "Ciencia ficcion": scifiImg,
-    "Misterio": mysteryImg,
+    "History": historyImg,
+    "Scifi": scifiImg,
+    "Mystery": mysteryImg,
   };
 
   const fetchBooks = async () => {
