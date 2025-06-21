@@ -1,6 +1,6 @@
 import React from 'react';
 import BookCard from '../BookCard/BookCard';
-import mainbg from '../assets/mainbg.png';
+import mainbg from '../../assets/mainImg/mainbg.png';
 import './Home.css';
 
 export default function Home({ books, genreImages }) {

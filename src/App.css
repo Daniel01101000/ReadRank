@@ -58,17 +58,6 @@ html, body {
   text-align: center;
 }
 
-/* Inputs y botón */
-
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 1rem 0.5rem;
-}
-
 /* Nueva rejilla de libros */
 .book-grid {
   display: grid;
@@ -79,24 +68,6 @@ button {
   max-width: 100%; /* Asegura que no se pasen */
   box-sizing: border-box;
 }
-
-input, button, select {
-  display: block;
-  margin: 0.5rem auto;
-  padding: 0.5rem;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  font-family: "Press Start 2P", system-ui, sans-serif;
-  border: 5px solid black;
-  border-radius: 0;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-
  
 .book-card {
   background-color: #f5f5f5;
@@ -118,6 +89,22 @@ input, button, select {
   /* height: 250px; */
   /* flex: 0 1 250px; */
   /* min-width: 180px; */
+}
+input, button, select {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  border: 5px solid black;
+  border-radius: 0;
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
 
 /* Texto con fuente pixelada */

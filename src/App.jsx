@@ -1,12 +1,12 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header.jsx';
-import Home from './components/Home.jsx';
-import Library from './components/Library.jsx';
-import Favorites from './components/Favorites.jsx';
-import AddBook from './components/AddBook.jsx';
-import About from './components/About.jsx';
+import Header from './components/Header/Header.jsx';
+import Home from './components/Home/Home.jsx';
+import Library from './components/Library/Library.jsx';
+import Favorites from './components/Favorites/Favorites.jsx';
+import AddBook from './components/AddBook/AddBook.jsx';
+import About from './components/About/About.jsx';
 
 import adventureImg from "./assets/books/Adventure.png";
 import horrorImg from "./assets/books/Horror.png";
@@ -63,26 +63,22 @@ export default function App() {
     <Router basename="/ReadRank">
       <Header />
       <Routes>
-        <Route path="/" element={<Home books={books} genreImages={genreImages} />} />
-        <Route path="/library" element={
-          <Library books={books} genreImages={genreImages} />
-        } />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/add" element={
-          <AddBook
-            title={title}
-            setTitle={setTitle}
-            author={author}
-            setAuthor={setAuthor}
-            genre={genre}
-            setGenre={setGenre}
-            handleSubmit={handleSubmit}
-            books={books} 
-            genreImages={genreImages}
-          />
-        } />
-        <Route path="/about" element={<About />} />
-      </Routes>
+  <Route path="/" element={<Home books={books} genreImages={genreImages} />} />
+  <Route path="/library" element={<Library books={books} genreImages={genreImages} />} />
+  <Route path="/favorites" element={<Favorites books={books} genreImages={genreImages} />} />
+  <Route path="/add" element={<AddBook
+    title={title}
+    setTitle={setTitle}
+    author={author}
+    setAuthor={setAuthor}
+    genre={genre}
+    setGenre={setGenre}
+    handleSubmit={handleSubmit}
+    books={books} 
+    genreImages={genreImages}
+  />} />
+  <Route path="/about" element={<About />} />
+</Routes>
     </Router>
   );
 }

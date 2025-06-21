@@ -56,3 +56,21 @@
 body, #root, .content, .book-grid, .hero, main {
   box-sizing: border-box;
 }
+
+.logo-img {
+  height: 2.8rem; /* ajusta según tu diseño */
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.pixel-logo {
+  color: #5b3e2b;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-start; /* Alineación superior */
+}
+
+.pixel-logo span {
+  position: relative;
+  top: 1rem; /* baja el texto */
+}

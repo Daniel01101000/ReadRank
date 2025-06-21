@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5rem 2rem 3rem; /* espacio superior para evitar el header */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.desk {
+  position: absolute;
+  top: 110px; /* baja la imagen debajo del header */
+  right: 30px;
+  width: 27rem;
+  height: auto;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.about-text {
+  max-width: 750px; /* Aumentado desde 600px */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem; /* Aumentado desde 0.6rem */
+  color: #333;
+  line-height: 1.9;
+  background-color: #fdf6ec;
+  padding: 2.5rem; /* Aumentado el padding */
+  border: 3px solid #5b3e2b;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.about-text ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.about-text li {
+  margin-bottom: 0.5rem;
+}
+
+.dev {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 12rem; /* ajusta el tamaño según necesites */
+  height: auto;
+  margin: 4.8rem;
+  z-index: 0;
+  opacity: 0.9;
+  cursor: pointer;
+}

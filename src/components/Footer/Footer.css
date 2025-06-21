@@ -1,0 +1,22 @@
+.footer {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 0.6rem;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  font-size: 0.75rem;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.github-logo {
+  width: 4rem;
+  height: 4rem;
+}

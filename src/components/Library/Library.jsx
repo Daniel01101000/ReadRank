@@ -1,5 +1,5 @@
 import React from 'react';
-import BookCard from './BookCard';
+import BookCard from '../BookCard/BookCard.jsx';
 import './Library.css';
 
 export default function Library({ books, genreImages }) {
