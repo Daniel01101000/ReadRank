@@ -5,6 +5,14 @@
   border-bottom: 4px solid #5b3e2b; /* Marrón oscuro */
   padding: 1rem;
   font-family: 'Press Start 2P', cursive;
+
+  width: 100%;             /* Ocupa todo el ancho */
+  box-sizing: border-box;  /* Incluye padding en el ancho */
+
+  position: fixed;         /* Se fija en la parte superior */
+  top: 0;
+  left: 0;
+  z-index: 1000;           /* Para que quede por encima del contenido */
 }
 
 .pixel-nav {
@@ -42,4 +50,9 @@
   color: #000;
   border-color: #fff;
   transition: 0.2s;
+}
+
+/* Para evitar que el contenido quede oculto detrás del header fijo */
+body, #root, .content, .book-grid, .hero, main {
+  box-sizing: border-box;
 }
