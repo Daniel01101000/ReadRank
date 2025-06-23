@@ -16,10 +16,15 @@ export default function About() {
               This project was built using the following technologies:
             </p>
             <ul>
-              <li>Vite</li>
               <li>React</li>
+              <li>Vite</li>
               <li>CSS</li>
+              <li>Bootstrap <small>(only for icons)</small></li>
               <li>MySQL</li>
+              <li>Express</li>
+              <li>Node.js</li>
+              <li>Jest</li>
+              <li>Babel</li>
               <li>Git</li>
               <li>GitHub Pages</li>
             </ul>

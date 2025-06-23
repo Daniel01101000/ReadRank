@@ -6,13 +6,12 @@
   padding: 1rem;
   font-family: 'Press Start 2P', cursive;
 
-  width: 100%;             /* Ocupa todo el ancho */
-  box-sizing: border-box;  /* Incluye padding en el ancho */
-
-  position: fixed;         /* Se fija en la parte superior */
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;           /* Para que quede por encima del contenido */
+  z-index: 1000;
 }
 
 .pixel-nav {
@@ -25,6 +24,19 @@
 .pixel-logo {
   color: #5b3e2b;
   font-size: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.pixel-logo span {
+  position: relative;
+  top: 1rem;
+}
+
+.logo-img {
+  height: 2.8rem;
+  margin-right: 0.3rem;
+  vertical-align: middle;
 }
 
 .pixel-nav-links {
@@ -43,36 +55,18 @@
   padding: 0.5rem 1rem;
   border: 3px solid #fff;
   display: inline-block;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .pixel-nav-links li a:hover {
   background-color: #d88942;
   color: #000;
   border-color: #fff;
-  transition: 0.2s;
 }
 
 /* Para evitar que el contenido quede oculto detrás del header fijo */
 body, #root, .content, .book-grid, .hero, main {
   box-sizing: border-box;
-}
-
-.logo-img {
-  height: 2.8rem; /* ajusta según tu diseño */
-  margin-right: 0.3rem;
-  vertical-align: middle;
-}
-
-.pixel-logo {
-  color: #5b3e2b;
-  font-size: 1rem;
-  display: flex;
-  align-items: flex-start; /* Alineación superior */
-}
-
-.pixel-logo span {
-  position: relative;
-  top: 1rem; /* baja el texto */
 }
 
 .hamburger {
@@ -82,29 +76,60 @@ body, #root, .content, .book-grid, .hero, main {
   cursor: pointer;
 }
 
-@media screen and (max-width: 916px) {
+@media screen and (max-width: 1076px) {
   .hamburger {
     display: block;
   }
 
+  .hamburger i {
+  font-size: 6.5rem;
+  color: red;
+  display: inline-block;
+}
+
   .pixel-nav-links {
-    display: none;
     flex-direction: column;
-    background-color: #e2caa6;
     position: absolute;
     top: 100%;
     right: 1rem;
-    border: 2px solid #5b3e2b;
     padding: 1rem;
     gap: 0.8rem;
     z-index: 999;
+
+    background-color: #e2caa6;
+    border: 4px solid #5b3e2b;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 8px #5b3e2b;
+
+    /* Pixel art */
+    image-rendering: pixelated;
+
+    /* Estado oculto */
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top right;
+
+    /* Para que la animación funcione */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    pointer-events: none; /* evita que se pueda clickear cuando está oculto */
   }
 
+  /* Estado visible */
   .pixel-nav-links.open {
-    display: flex;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
   }
 
   .pixel-nav-links li a {
     font-size: 0.65rem;
+    padding: 0.6rem 1rem;
+    background-color: #5b3e2b;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 3px #d88942;
+  }
+
+  .pixel-nav-links li a:hover {
+    background-color: #d88942;
+    color: black;
   }
 }

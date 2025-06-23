@@ -1,0 +1,16 @@
+.top-rated-page {
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 100px; /* Compensa la altura del header fijo */
+  box-sizing: border-box;
+}
+
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-top: 0; /* Elimina el margin-top innecesario */
+}

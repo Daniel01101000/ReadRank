@@ -4,10 +4,9 @@ import starOn from '../../assets/stars/starOn.png';
 import starSound from '../../assets/sounds/Star.wav'; // importa el sonido .wav
 import './BookCard.css';
 
+
 export default function BookCard({ book, imgSrc }) {
   const [isFavorite, setIsFavorite] = useState(false);
-
-  // Referencia para el audio para evitar recrearlo en cada render
   const audioRef = useRef(new Audio(starSound));
 
   useEffect(() => {
@@ -17,19 +16,15 @@ export default function BookCard({ book, imgSrc }) {
 
   const toggleFavorite = () => {
     const storedFavorites = JSON.parse(localStorage.getItem('favoriteBooks')) || [];
-
     let updatedFavorites;
     if (storedFavorites.includes(book.id)) {
       updatedFavorites = storedFavorites.filter(id => id !== book.id);
     } else {
       updatedFavorites = [...storedFavorites, book.id];
     }
-
     localStorage.setItem('favoriteBooks', JSON.stringify(updatedFavorites));
     setIsFavorite(!isFavorite);
-
-    // Reproducir sonido al cambiar favorito
-    audioRef.current.currentTime = 0; // reinicia para que pueda reproducirse rápido varias veces
+    audioRef.current.currentTime = 0;
     audioRef.current.play();
   };
 
@@ -46,6 +41,17 @@ export default function BookCard({ book, imgSrc }) {
       <p className="pixel-font">{book.title}</p>
       <img src={imgSrc} alt={book.genero} className="book" />
       <p className="bookAuthor">{book.author}</p>
+
+      {/* Contenedor para estrella + calificación */}
+      <div className="rating-container">
+        <img
+          src={starOn}
+          alt="star"
+          className="star-small"
+        />
+        <span className="bookRating">{book.rating}</span>
+      </div>
+
       <p className="bookGender">{book.genero}</p>
     </div>
   );

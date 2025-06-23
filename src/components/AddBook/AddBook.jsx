@@ -1,4 +1,3 @@
-import React from 'react';
 import BookCard from '../BookCard/BookCard.jsx';
 import './AddBook.css';
 
@@ -9,6 +8,8 @@ export default function AddBook({
   setAuthor,
   genre,
   setGenre,
+  rating,
+  setRating,
   handleSubmit,
   books,
   genreImages
@@ -38,6 +39,20 @@ export default function AddBook({
           className="inputs"
           required
         />
+        <input
+  type="number"
+  step="0.1"
+  min="0"
+  max="10"
+  value={rating === null ? "" : rating}
+  onChange={(e) => {
+    const val = e.target.value;
+    setRating(val === "" ? null : parseFloat(val));
+  }}
+  placeholder="Rating"
+  className="inputs"
+  required
+/>
         <select
           value={genre}
           onChange={(e) => setGenre(e.target.value)}
@@ -45,14 +60,14 @@ export default function AddBook({
           className="inputs"
         >
            <option value="" disabled hidden>Select a genre</option>
-  <option value="Adventure">Adventure</option>
-  <option value="Horror">Horror</option>
-  <option value="Romance">Romance</option>
-  <option value="History">History</option>
-  <option value="Scifi">Science Fiction</option>
-  <option value="Mystery">Mystery</option>
-</select>
-<button>Add</button>
+           <option value="Adventure">Adventure</option>
+           <option value="Horror">Horror</option>
+           <option value="Romance">Romance</option>
+           <option value="History">History</option>
+           <option value="Scifi">Science Fiction</option>
+           <option value="Mystery">Mystery</option>
+        </select>
+        <button>Add</button>
       </form>
     </main>
   );
