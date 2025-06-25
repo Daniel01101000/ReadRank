@@ -1,5 +1,5 @@
 {
-  "name": "bookrank",
+  "name": "bookrank-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,9 +13,6 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.13.1",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "mysql2": "^3.14.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2"
@@ -23,17 +20,16 @@
   "devDependencies": {
     "@babel/preset-env": "^7.27.2",
     "@eslint/js": "^9.25.0",
-    "@jest/globals": "^30.0.2",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
-    "babel-jest": "^30.0.2",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "gh-pages": "^6.3.0",
     "jest": "^30.0.2",
-    "supertest": "^7.1.1",
+    "babel-jest": "^30.0.2",
+    "globals": "^16.0.0",
     "vite": "^6.3.5"
   }
 }
